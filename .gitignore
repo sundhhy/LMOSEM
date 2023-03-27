@@ -1,1 +1,6 @@
 *.[oais]
+*.mkh
+*.swp
+*.bin
+*.elf
+tags
