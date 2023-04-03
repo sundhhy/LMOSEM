@@ -7,7 +7,7 @@
 
 LKHEAD_T void lmosemhal_start()
 {
-		for(;;);
-		return;
+	init_hal();		
+	return;
 
 }
