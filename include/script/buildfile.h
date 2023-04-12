@@ -2,7 +2,8 @@
 #define BUILDFILE_H
 
 #define BUILD_BOOT_OBJS
-#define BUILD_HALY_OBJS init.o lmosemhal_start.o vector.o interrupt.o halinit.o halmmu.o platform.o haluart.o cpuctrl.o
+#define BUILD_HALY_OBJS init.o lmosemhal_start.o vector.o interrupt.o halinit.o halmmu.o platform.o haluart.o cpuctrl.o _divsi3.o _modsi3.o _udivsi3.o \
+						_umodsi3.o div0.o printfk.o
 #define BUILD_KRNL_OBJS 
 #define BUILD_MEMY_OBJS
 #define BUILD_FSYS_OBJS
