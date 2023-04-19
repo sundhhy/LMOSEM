@@ -10,6 +10,7 @@ void init_paltform()
 {
 		s3c2440mmu_init();
 		s3c2440vector_init();
+		init_halmach();
 
 		return;
 }
