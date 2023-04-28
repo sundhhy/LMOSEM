@@ -13,7 +13,7 @@ void init_haluart()
 	//hal_uart0_putc('h');
 	uint_t	val1 = 12;
 	char	*test_str = "test printf";
-	printfk("vald is %d,valx is %x, str is %s",
+	//printfk("vald is %d,valx is %x, str is %s", \
 		val1, val1, test_str);
 	return;
 }
