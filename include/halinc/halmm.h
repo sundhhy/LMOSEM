@@ -6,6 +6,7 @@
 #ifndef _HALMM_H
 #define _HALMM_H
 void init_halmm();
+void print_mmapdsc(mach_t *mchp);
 sint_t cheksum_phyadrspce(mach_t* mahp);
 void init_mmapdsc(mach_t* mahp);
 uint_t init_core_mmapdsc(adr_t adrs,adr_t adre,mmapdsc_t* gmmp,uint_t curmindx);
