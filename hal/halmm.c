@@ -14,6 +14,8 @@ void init_halmm(void)
 	}
 	init_mmapdsc(&osmach);
 	init_phymem();
+
+	onmmapdsc_inkrlram(&osmach, &osphymem);
 	print_mmapdsc(&osmach);
 }
 
@@ -186,4 +188,23 @@ void mapdsc_addto_memlst(alcfrelst_t *aflp, mmapdsc_t *mapp, uint_t atflg)
 			list_add_tail(&mapp->map_list, &aflp->afl_fulllsth);
 			break;
 	}
+}
+
+void onmmapdsc_inkrlram(mach_t *mahp, phymem_t *pmp)
+{
+	mmapdsc_t*	mapp = mahp->mh_mmapdscadr;
+	adr_t 	ker_r_s = mahp->mh_kerinramstart, ker_r_e = mahp->mh_kerinramend;
+
+	if (ker_r_e-ker_r_s > BLK128KB_SIZE || ker_r_s < mapp[0].map_phyadr)
+	{
+		hal_sysdie("onmmapdsc_inkrlramm err");
+	}
+
+	u32_t	cut=1;
+	u32_t 	flg = MAP_FLAGES_VAL(0, MAPF_ACSZ_128KB, MAPF_SZ_4MB);
+
+	mapp[0].map_allcount = cut;
+	mapp[0].map_flg = flg;
+	mapdsc_addto_memlst(&pmp->pmm_sz_lsth[0], &mapp[0], ADDT_FUEM_FLG);
+	return;
 }
