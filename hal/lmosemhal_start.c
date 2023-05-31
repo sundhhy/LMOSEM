@@ -8,6 +8,7 @@
 LKHEAD_T void lmosemhal_start()
 {
 	init_hal();		
+	init_krl();
 	return;
 
 }

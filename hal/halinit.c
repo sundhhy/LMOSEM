@@ -11,6 +11,7 @@ LKHEAD_T void init_hal()
 	init_halmach();
 	init_halmm();
 	init_halintupt();
+	print_mach(&osmach);
 
 	return;
 

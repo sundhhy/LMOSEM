@@ -9,7 +9,7 @@ void init_halmach()
 {
 
 	mach_t_init(&osmach);
-	print_mach(&osmach);
+	//print_mach(&osmach);
 	return;
 }
 
